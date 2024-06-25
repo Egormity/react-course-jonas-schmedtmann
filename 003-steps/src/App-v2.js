@@ -1,15 +1,10 @@
 import { useState } from 'react';
 
-/* const messages = [
-  'Learn React ⚛️',
-  'Apply for jobs 💼',
-  'Invest your new income 🤑',
-];
+const messages = ['Learn React ⚛️', 'Apply for jobs 💼', 'Invest your new income 🤑'];
 
 export default function App() {
   return (
     <div>
-      <Steps />
       <Steps />
     </div>
   );
@@ -27,36 +22,45 @@ const Steps = function () {
 
   return (
     <div>
-      <button className="close" onClick={() => setIsOpen(is => !is)}>
+      <button className='close' onClick={() => setIsOpen(is => !is)}>
         &times;
       </button>
 
       {isOpen && (
-        <div className="steps ">
-          <div className="numbers">
+        <div className='steps '>
+          <div className='numbers'>
             <div className={active(1)}>1</div>
             <div className={active(2)}>2</div>
             <div className={active(3)}>3</div>
           </div>
 
-          <p className="message">
+          <p className='message'>
             Step {step}: {messages.at(step - 1)}
           </p>
 
-          <div className="buttons">
-            <button style={btnStyle} onClick={prevStep}>
-              Previous
-            </button>
-            <button style={btnStyle} onClick={nextStep}>
-              Next
-            </button>
+          <div className='buttons'>
+            <Button btnStyle={btnStyle} onClick={prevStep}>
+              <span>👈</span> Previous
+            </Button>
+            <Button btnStyle={btnStyle} onClick={nextStep}>
+              Next <span>👉</span>
+            </Button>
           </div>
         </div>
       )}
     </div>
   );
-}; */
+};
 
+const Button = function ({ btnStyle, onClick, children }) {
+  return (
+    <button style={btnStyle} onClick={onClick}>
+      {children}
+    </button>
+  );
+};
+
+/*
 //--- CODING CHALLENGE #1 ---//
 export default function App() {
   return (
@@ -119,3 +123,4 @@ const Counter = function () {
     </div>
   );
 };
+*/
