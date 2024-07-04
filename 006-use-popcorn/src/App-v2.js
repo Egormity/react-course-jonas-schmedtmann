@@ -294,7 +294,6 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatchedMovie, watched }) 
 
   useEffect(() => {
     const closeCb = document.addEventListener('keydown', e => e.key === 'Escape' && onCloseMovie());
-    closeCb;
     document.removeEventListener('keydown', closeCb);
   }, [onCloseMovie]);
 
