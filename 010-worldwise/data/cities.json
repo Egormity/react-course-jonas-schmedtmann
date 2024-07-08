@@ -37,28 +37,208 @@
       "id": 98443197
     },
     {
-      "cityName": "Faro",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
-      "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": 334456674524
-    },
-    {
-      "cityName": "Barselona",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
+      "cityName": "Berezovka",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-07-08T11:30:22.887Z",
       "notes": "",
       "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
+        "lat": "55.986091533808384",
+        "lng": "93.08715820312501"
       },
-      "id": 6788512342346
+      "id": 98443198
+    },
+    {
+      "cityName": "Uman",
+      "country": "Ukraine",
+      "emoji": "🇺🇦",
+      "date": "2024-07-08T11:30:37.105Z",
+      "notes": "",
+      "position": {
+        "lat": "48.922499263758255",
+        "lng": "30.410156250000004"
+      },
+      "id": 98443199
+    },
+    {
+      "cityName": "Kaliningrad",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-07-08T11:30:57.243Z",
+      "notes": "",
+      "position": {
+        "lat": "54.70558168515836",
+        "lng": "20.505981445312504"
+      },
+      "id": 98443200
+    },
+    {
+      "cityName": "Montferrer i Castellbo",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-07-08T11:34:00.210Z",
+      "notes": "",
+      "position": {
+        "lat": "42.342305278572816",
+        "lng": "1.3183593750000002"
+      },
+      "id": 98443201
+    },
+    {
+      "cityName": "Burgui",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-07-08T11:36:39.678Z",
+      "notes": "",
+      "position": {
+        "lat": "42.76314586689494",
+        "lng": "-0.9667968750000001"
+      },
+      "id": 98443202
+    },
+    {
+      "cityName": "Bozoo",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-07-08T11:36:39.678Z",
+      "notes": "",
+      "position": {
+        "lat": "42.74701217318067",
+        "lng": "-3.09814453125"
+      },
+      "id": 98443203
+    },
+    {
+      "cityName": "Horcajo de las Torres",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2024-07-08T11:36:39.678Z",
+      "notes": "",
+      "position": {
+        "lat": "41.046216814520655",
+        "lng": "-5.097656250000001"
+      },
+      "id": 98443204
+    },
+    {
+      "cityName": "Mlele",
+      "country": "Tanzania, the United Republic of",
+      "emoji": "🇹🇿",
+      "date": "2024-07-08T11:37:31.958Z",
+      "notes": "",
+      "position": {
+        "lat": "-6.664607562172573",
+        "lng": "32.34375000000001"
+      },
+      "id": 98443205
+    },
+    {
+      "cityName": "Menaka",
+      "country": "Mali",
+      "emoji": "🇲🇱",
+      "date": "2024-07-08T11:37:31.958Z",
+      "notes": "",
+      "position": {
+        "lat": "17.308687886770034",
+        "lng": "3.1640625000000004"
+      },
+      "id": 98443206
+    },
+    {
+      "cityName": "Ampasikely",
+      "country": "Madagascar",
+      "emoji": "🇲🇬",
+      "date": "2024-07-08T11:37:31.958Z",
+      "notes": "",
+      "position": {
+        "lat": "-17.644022027872726",
+        "lng": "48.16406250000001"
+      },
+      "id": 98443207
+    },
+    {
+      "cityName": "Mueller Ranges",
+      "country": "Australia",
+      "emoji": "🇦🇺",
+      "date": "2024-07-08T11:37:31.958Z",
+      "notes": "",
+      "position": {
+        "lat": "-18.646245142670608",
+        "lng": "126.21093750000001"
+      },
+      "id": 98443208
+    },
+    {
+      "cityName": "Boulsa",
+      "country": "Burkina Faso",
+      "emoji": "🇧🇫",
+      "date": "2024-07-08T11:38:46.017Z",
+      "notes": "",
+      "position": {
+        "lat": "12.55456352859367",
+        "lng": "-0.3515625"
+      },
+      "id": 98443209
+    },
+    {
+      "cityName": "Gjirokaster",
+      "country": "Albania",
+      "emoji": "🇦🇱",
+      "date": "2024-07-08T11:38:59.123Z",
+      "notes": "",
+      "position": {
+        "lat": "40.17887331434698",
+        "lng": "20.039062500000004"
+      },
+      "id": 98443210
+    },
+    {
+      "cityName": "Bashkia Skrapar",
+      "country": "Albania",
+      "emoji": "🇦🇱",
+      "date": "2024-07-08T11:39:06.079Z",
+      "notes": "",
+      "position": {
+        "lat": "40.48873742102282",
+        "lng": "20.368652343750004"
+      },
+      "id": 98443211
+    },
+    {
+      "cityName": "Gramsh",
+      "country": "Albania",
+      "emoji": "🇦🇱",
+      "date": "2024-07-08T11:39:26.627Z",
+      "notes": "",
+      "position": {
+        "lat": "40.94671366508002",
+        "lng": "20.258789062500004"
+      },
+      "id": 98443212
+    },
+    {
+      "cityName": "Makedonski Brod",
+      "country": "North Macedonia",
+      "emoji": "🇲🇰",
+      "date": "2024-07-08T11:39:29.530Z",
+      "notes": "",
+      "position": {
+        "lat": "41.57436130598913",
+        "lng": "21.2969970703125"
+      },
+      "id": 98443213
+    },
+    {
+      "cityName": "Parvomay",
+      "country": "Bulgaria",
+      "emoji": "🇧🇬",
+      "date": "2024-07-08T11:39:33.164Z",
+      "notes": "",
+      "position": {
+        "lat": "41.983994270935625",
+        "lng": "25.180664062500004"
+      },
+      "id": 98443214
     }
   ]
 }

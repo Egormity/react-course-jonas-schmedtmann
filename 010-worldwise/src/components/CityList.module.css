@@ -10,6 +10,10 @@
   gap: 1.4rem;
 }
 
+.cityList {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
 .cityList::-webkit-scrollbar {
-  width: 0;
+  display: none; /* Safari and Chrome */
 }
