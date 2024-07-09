@@ -1,8 +1,4 @@
-import { useQuiz } from '../QuizProvider';
-
-function Progress() {
-  const { index, numQuestions, points, maxPossiblePoints, isAnAnswer } = useQuiz();
-
+function Progress({ index, numQuestions, points, maxPossiblePoints, isAnAnswer }) {
   return (
     <header className='progress'>
       <progress max={numQuestions} value={index + +isAnAnswer} />

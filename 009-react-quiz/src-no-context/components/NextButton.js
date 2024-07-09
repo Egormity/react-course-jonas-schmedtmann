@@ -1,8 +1,4 @@
-import { useQuiz } from '../QuizProvider';
-
-function NextButton() {
-  const { dispatch, isAnAnswer, isLastQuestion } = useQuiz();
-
+function NextButton({ dispatch, isAnAnswer, isLastQuestion }) {
   if (!isAnAnswer) return;
 
   return !isLastQuestion ? (
