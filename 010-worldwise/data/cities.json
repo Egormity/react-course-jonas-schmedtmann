@@ -83,6 +83,30 @@
         "lng": "110.56640625000001"
       },
       "id": 12
+    },
+    {
+      "cityName": "Saint Petersburg",
+      "country": "Russian Federation (the)",
+      "emoji": "🇷🇺",
+      "date": "2024-07-09T05:17:14.889Z",
+      "notes": "",
+      "position": {
+        "lat": "59.936096440197694",
+        "lng": "30.32157897949219"
+      },
+      "id": 13
+    },
+    {
+      "cityName": "Skeiða- og Gnupverjahreppur",
+      "country": "Iceland",
+      "emoji": "🇮🇸",
+      "date": "2024-07-09T05:17:47.951Z",
+      "notes": "Test",
+      "position": {
+        "lat": "64.54844014422517",
+        "lng": "-18.984375000000004"
+      },
+      "id": 14
     }
   ]
 }
