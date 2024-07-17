@@ -36,12 +36,12 @@ const Error = styled.span`
   color: var(--color-red-700);
 `;
 
-export default function FormRow({ label, errorMessage, children }) {
+export default function FormRow({ label, error, children }) {
   return (
     <StyledFormRow>
       {label && <Label htmlFor={children.props.id}>{label}</Label>}
       {children}
-      {errorMessage && <Error>{errorMessage}</Error>}
+      {error && <Error>{error}</Error>}
     </StyledFormRow>
   );
 }
