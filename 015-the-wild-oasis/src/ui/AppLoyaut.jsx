@@ -19,9 +19,17 @@ const Container = styled.div`
 `;
 
 const Main = styled.main`
-  overflow: scroll;
   background-color: var(--color-grey-50);
   padding: 4rem 4.8rem 6.4rem;
+
+  /* SCROLL WITH NO SCROLL BAR */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
 `;
 
 export default function AppLoyaut() {
