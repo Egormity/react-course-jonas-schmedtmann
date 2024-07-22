@@ -9,8 +9,8 @@ import { useLogin } from './useLogin';
 import SpinnerMini from '../../ui/SpinnerMini';
 
 export default function LoginForm() {
-  const [email, setEmail] = useState('egormity@example.com');
-  const [password, setPassword] = useState('12345678');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const { login, isLoading } = useLogin();
 
@@ -26,7 +26,7 @@ export default function LoginForm() {
           setEmail('');
           setPassword('');
         },
-      },
+      }
     );
   }
 

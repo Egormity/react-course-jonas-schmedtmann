@@ -13,6 +13,7 @@ import { unknownGuests } from '../../data/unknownData';
 
 import { useMoveBack } from '../../hooks/useMoveBack';
 import { useBooking } from '../bookings/useBooking';
+import { useUser } from '../authentication/useUser';
 import { formatCurrency } from '../../utils/helpers';
 import { useCheckIn } from './useCheckIn';
 import { useSettings } from '../settings/useSettings';
@@ -34,6 +35,7 @@ function CheckinBooking() {
   const { checkIn, isCheckingIn } = useCheckIn();
   const moveBack = useMoveBack();
 
+  const { isAdmin } = useUser();
   const isHappening = isLoadingSettings || isLoading || isCheckingIn;
 
   useEffect(() => {
@@ -91,18 +93,20 @@ function CheckinBooking() {
         <Checkbox
           id='confirm-paid'
           checked={confirmPaid}
-          disabled={confirmPaid || isHappening}
+          disabled={isHappening}
           onChange={() => setConfirmPaid(confirm => !confirm)}
         >
           I confrim that {fullName} has paid the total amount{' '}
           {!addBreakfast
             ? formatCurrency(totalPrice)
-            : `${formatCurrency(totalPrice)} (cabin) + ${formatCurrency(optionalBreakfastPrice)} (breakfast) = ${formatCurrency(totalPrice + optionalBreakfastPrice)}`}
+            : `${formatCurrency(totalPrice)} (cabin) + ${formatCurrency(
+                optionalBreakfastPrice
+              )} (breakfast) = ${formatCurrency(totalPrice + optionalBreakfastPrice)}`}
         </Checkbox>
       </Box>
 
       <ButtonGroup>
-        <Button disabled={!confirmPaid || isHappening} onClick={handleCheckin}>
+        <Button disabled={!confirmPaid || isHappening || !isAdmin} onClick={handleCheckin}>
           Check in booking #{bookingId}
         </Button>
 

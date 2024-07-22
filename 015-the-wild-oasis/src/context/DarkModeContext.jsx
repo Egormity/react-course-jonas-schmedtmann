@@ -1,22 +1,29 @@
-import { createContext, useContext, useEffect } from 'react';
-
-import { useLocalStorageState } from '../hooks/useLocalStorageState';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const DarkModeContext = createContext();
 
 function DarkModeProvider({ children }) {
-  const [isDarkMode, setIsDarkMode] = useLocalStorageState(false, 'isDarkMode');
+  const isModeInLocalStorage = localStorage.getItem('dark-mode');
+  const [isDarkMode, setIsDarkMode] = useState(
+    isModeInLocalStorage
+      ? Boolean(+isModeInLocalStorage)
+      : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  );
 
   useEffect(() => {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    if (isDarkMode) {
       document.documentElement.classList.add('dark-mode');
-    else document.documentElement.classList.add('light-mode');
-  }, []);
+      document.documentElement.classList.remove('light-mode');
+    }
+    if (!isDarkMode) {
+      document.documentElement.classList.add('light-mode');
+      document.documentElement.classList.remove('dark-mode');
+    }
+    localStorage.setItem('dark-mode', isDarkMode ? 1 : 0);
+  }, [isDarkMode]);
 
   function toggleDarkMode() {
     setIsDarkMode(isDark => !isDark);
-    document.documentElement.classList.toggle('dark-mode');
-    document.documentElement.classList.toggle('light-mode');
   }
 
   return (

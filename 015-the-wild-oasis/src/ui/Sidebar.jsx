@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import MainNav from './MainNav';
 import Uploader from './../data/Uploader';
+import { useUser } from '../features/authentication/useUser';
 
 const StyledSidebar = styled.aside`
   grid-row: 1 / -1;

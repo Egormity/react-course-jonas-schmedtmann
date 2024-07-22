@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { HiEllipsisVertical } from 'react-icons/hi2';
 import styled from 'styled-components';
 import { useOutsideClick } from '../hooks/useOutsideClick';
+import { useUser } from '../features/authentication/useUser';
 
 const Menu = styled.div`
   display: flex;
@@ -113,12 +114,13 @@ function List({ id, children }) {
     <StyledList position={position} ref={ref}>
       {children}
     </StyledList>,
-    document.body,
+    document.body
   );
 }
 
 function Button({ children, icon, onClick }) {
   const { close } = useContext(MenusContext);
+  const { isAdmin } = useUser();
 
   function handleClick() {
     onClick?.();
@@ -128,7 +130,7 @@ function Button({ children, icon, onClick }) {
   return (
     <ul>
       <li>
-        <StyledButton onClick={handleClick}>
+        <StyledButton disabled={!isAdmin} onClick={handleClick}>
           {icon} <span>{children}</span>
         </StyledButton>
       </li>

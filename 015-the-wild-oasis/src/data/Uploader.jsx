@@ -7,6 +7,7 @@ import { subtractDates } from '../utils/helpers';
 import { bookings } from './data-bookings';
 import { cabins } from './data-cabins';
 import { guests } from './data-guests';
+import { useUser } from '../features/authentication/useUser';
 
 // const originalSettings = {
 //   minBookingLength: 3,
@@ -85,6 +86,9 @@ async function createBookings() {
 
 export default function Uploader() {
   const [isLoading, setIsLoading] = useState(false);
+  const { isAdmin } = useUser();
+
+  const disabled = isLoading || !isAdmin;
 
   async function uploadAll() {
     setIsLoading(true);
@@ -124,11 +128,11 @@ export default function Uploader() {
       <h3>Sample data</h3>
       <p style={{ color: 'var(--color-grey-500)', fontSize: '1.4rem' }}>Only for developers</p>
 
-      <Button onClick={uploadAll} disabled={isLoading}>
+      <Button onClick={uploadAll} disabled={disabled}>
         Upload ALL
       </Button>
 
-      <Button onClick={uploadBookings} disabled={isLoading}>
+      <Button onClick={uploadBookings} disabled={disabled}>
         Upload bookings ONLY
       </Button>
     </div>

@@ -12,6 +12,7 @@ import { useUpdateUser } from './useUpdateUser';
 function UpdateUserDataForm() {
   // We don't need the loading state, and can immediately use the user data, because we know that it has already been loaded at this point
   const {
+    isAdmin,
     user: {
       email,
       user_metadata: { fullName: currentFullName },
@@ -23,6 +24,8 @@ function UpdateUserDataForm() {
   const [fullName, setFullName] = useState(currentFullName);
   const [avatar, setAvatar] = useState(null);
 
+  const disabled = !isAdmin || isUpdating;
+
   function handleSubmit(e) {
     e.preventDefault();
     if (!fullName) return;
@@ -33,7 +36,7 @@ function UpdateUserDataForm() {
           setAvatar(null);
           e.target.reset();
         },
-      },
+      }
     );
   }
 
@@ -54,7 +57,7 @@ function UpdateUserDataForm() {
           value={fullName}
           onChange={e => setFullName(e.target.value)}
           id='fullName'
-          disabled={isUpdating}
+          disabled={disabled}
         />
       </FormRow>
 
@@ -63,15 +66,15 @@ function UpdateUserDataForm() {
           id='avatar'
           accept='image/*'
           onChange={e => setAvatar(e.target.files[0])}
-          disabled={isUpdating}
+          disabled={disabled}
         />
       </FormRow>
 
       <FormRow>
-        <Button type='reset' variation='secondary' disabled={isUpdating} onClick={handleCancel}>
+        <Button type='reset' variation='secondary' disabled={disabled} onClick={handleCancel}>
           Cancel
         </Button>
-        <Button disabled={isUpdating}>Update account</Button>
+        <Button disabled={disabled}>Update account</Button>
       </FormRow>
     </Form>
   );

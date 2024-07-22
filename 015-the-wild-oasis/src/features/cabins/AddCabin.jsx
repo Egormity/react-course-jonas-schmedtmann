@@ -2,13 +2,18 @@ import Button from '../../ui/Button';
 import CreateCabinForm from './CreateCabinForm';
 import Modal from '../../ui/Modal';
 import CabinTable from './CabinTable';
+import { useUser } from '../authentication/useUser';
 
 export default function AddCabin() {
+  const { isAdmin } = useUser();
+
+  const disabled = !isAdmin;
+
   return (
     <div>
       <Modal>
         <Modal.Open opens='cabin-form'>
-          <Button>Add new cabin</Button>
+          <Button disabled={disabled}>Add new cabin</Button>
         </Modal.Open>
         <Modal.Window name='cabin-form'>
           <CreateCabinForm />

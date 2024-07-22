@@ -5,6 +5,7 @@ import Tag from '../../ui/Tag';
 import { Flag } from '../../ui/Flag';
 import Button from '../../ui/Button';
 import { useCheckOut } from './useCheckOut';
+import { useUser } from '../authentication/useUser';
 
 const StyledTodayItem = styled.li`
   display: grid;
@@ -28,6 +29,9 @@ const Guest = styled.div`
 export default function TodayItem({ activity }) {
   const { id, status, guests, numNights } = activity;
   const { checkOut, isCheckingOut } = useCheckOut();
+  const { isAdmin } = useUser();
+
+  const disabled = isCheckingOut || !isAdmin;
 
   return (
     <StyledTodayItem>
@@ -43,12 +47,12 @@ export default function TodayItem({ activity }) {
       </div>
 
       {status === 'unconfirmed' && (
-        <Button size='small' variation='primary' as={Link} to={`/checkin/${id}`} disabled={isCheckingOut}>
+        <Button size='small' variation='primary' as={Link} to={`/checkin/${id}`} disabled={disabled}>
           Check in
         </Button>
       )}
       {status === 'checked-in' && (
-        <Button size='small' variation='primary' onClick={() => checkOut(id)} disabled={isCheckingOut}>
+        <Button size='small' variation='primary' onClick={() => checkOut(id)} disabled={disabled}>
           Check out
         </Button>
       )}

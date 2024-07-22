@@ -11,5 +11,11 @@ export function useUser() {
     queryFn: getCurrentUser,
   });
 
-  return { isLoading, user, error, isAuthenticated: user?.role === 'authenticated' };
+  return {
+    isLoading,
+    user,
+    error,
+    isAuthenticated: user?.role === 'authenticated',
+    isAdmin: user?.email === 'admin@example.com',
+  };
 }

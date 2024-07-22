@@ -4,6 +4,7 @@ import Form from '../../ui/Form';
 import FormRow from '../../ui/FormRow';
 import Input from '../../ui/Input';
 import { useSignup } from './useSignup';
+import { useUser } from './useUser';
 
 // Email regex: /\S+@\S+\.\S+/
 
@@ -12,6 +13,9 @@ function SignupForm() {
   const { errors } = formState;
 
   const { signup, isLoading } = useSignup();
+  const { isAdmin } = useUser();
+
+  const disabled = !isAdmin || isLoading;
 
   function onSubmit(data) {
     const { fullName, email, password } = data;
@@ -22,6 +26,7 @@ function SignupForm() {
     <Form onSubmit={handleSubmit(onSubmit)}>
       <FormRow label='Full name' error={errors?.fullName?.message}>
         <Input
+          disabled={disabled}
           placeholder='Name'
           type='text'
           id='fullName'
@@ -32,7 +37,7 @@ function SignupForm() {
       <FormRow label='Email address' error={errors?.email?.message}>
         <Input
           placeholder='Email'
-          disabled={isLoading}
+          disabled={disabled}
           type='email'
           id='email'
           {...register('email', {
@@ -45,7 +50,7 @@ function SignupForm() {
       <FormRow label='Password (min 8 characters)' error={errors?.password?.message}>
         <Input
           placeholder='Password'
-          disabled={isLoading}
+          disabled={disabled}
           type='password'
           id='password'
           {...register('password', {
@@ -58,7 +63,7 @@ function SignupForm() {
       <FormRow label='Repeat password' error={errors?.passwordConfirm?.message}>
         <Input
           placeholder='Verify password'
-          disabled={isLoading}
+          disabled={disabled}
           type='password'
           id='passwordConfirm'
           {...register('passwordConfirm', {
@@ -71,10 +76,10 @@ function SignupForm() {
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button variation='secondary' type='reset' onClick={reset}>
+        <Button variation='secondary' type='reset' onClick={reset} disabled={disabled}>
           Cancel
         </Button>
-        <Button>Create new user</Button>
+        <Button disabled={disabled}>Create new user</Button>
       </FormRow>
     </Form>
   );
