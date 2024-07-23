@@ -13,11 +13,11 @@ function UpdateSettingsForm() {
     settings: { minBookingLength, maxBookingLength, maxGuestsPerBooking, breakfastPrice } = {},
   } = useSettings();
 
-  const { isAdmin } = useUser();
+  // const { isAdmin } = useUser();
 
   const { isUpdating, updateSetting } = useUpdateSetting();
 
-  const disabled = isUpdating || !isAdmin;
+  const disabled = isUpdating;
 
   function handleUpdate(e, field) {
     const { value } = e.target;

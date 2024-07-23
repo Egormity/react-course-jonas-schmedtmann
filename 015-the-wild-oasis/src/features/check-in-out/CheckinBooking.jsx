@@ -35,7 +35,7 @@ function CheckinBooking() {
   const { checkIn, isCheckingIn } = useCheckIn();
   const moveBack = useMoveBack();
 
-  const { isAdmin } = useUser();
+  // const { isAdmin } = useUser();
   const isHappening = isLoadingSettings || isLoading || isCheckingIn;
 
   useEffect(() => {
@@ -106,7 +106,7 @@ function CheckinBooking() {
       </Box>
 
       <ButtonGroup>
-        <Button disabled={!confirmPaid || isHappening || !isAdmin} onClick={handleCheckin}>
+        <Button disabled={!confirmPaid || isHappening} onClick={handleCheckin}>
           Check in booking #{bookingId}
         </Button>
 

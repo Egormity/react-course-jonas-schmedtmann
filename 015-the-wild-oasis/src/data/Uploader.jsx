@@ -86,9 +86,9 @@ async function createBookings() {
 
 export default function Uploader() {
   const [isLoading, setIsLoading] = useState(false);
-  const { isAdmin } = useUser();
+  // const { isAdmin } = useUser();
 
-  const disabled = isLoading || !isAdmin;
+  const disabled = isLoading;
 
   async function uploadAll() {
     setIsLoading(true);

@@ -7,7 +7,7 @@ import { useUser } from '../authentication/useUser';
 export default function AddCabin() {
   const { isAdmin } = useUser();
 
-  const disabled = !isAdmin;
+  const disabled = false;
 
   return (
     <div>

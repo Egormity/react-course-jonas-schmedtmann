@@ -29,9 +29,9 @@ const Guest = styled.div`
 export default function TodayItem({ activity }) {
   const { id, status, guests, numNights } = activity;
   const { checkOut, isCheckingOut } = useCheckOut();
-  const { isAdmin } = useUser();
+  // const { isAdmin } = useUser();
 
-  const disabled = isCheckingOut || !isAdmin;
+  const disabled = isCheckingOut;
 
   return (
     <StyledTodayItem>

@@ -12,9 +12,9 @@ function UpdatePasswordForm() {
   const { errors } = formState;
 
   const { updateUser, isUpdating } = useUpdateUser();
-  const { isAdmin } = useUser();
+  // const { isAdmin } = useUser();
 
-  const disabled = isUpdating || !isAdmin;
+  const disabled = isUpdating;
 
   function onSubmit({ password }) {
     updateUser({ password }, { onSuccess: reset });
@@ -25,6 +25,7 @@ function UpdatePasswordForm() {
       <FormRow label='New password (min 8 chars)' error={errors?.password?.message}>
         <Input
           type='password'
+          placeholder='New password'
           id='password'
           autoComplete='current-password'
           disabled={disabled}
@@ -44,6 +45,7 @@ function UpdatePasswordForm() {
           autoComplete='new-password'
           id='passwordConfirm'
           disabled={disabled}
+          placeholder='Confirm password'
           {...register('passwordConfirm', {
             required: 'This field is required',
             validate: value => getValues().password === value || 'Passwords need to match',

@@ -13,9 +13,9 @@ function SignupForm() {
   const { errors } = formState;
 
   const { signup, isLoading } = useSignup();
-  const { isAdmin } = useUser();
+  // const { isAdmin } = useUser();
 
-  const disabled = !isAdmin || isLoading;
+  const disabled = isLoading;
 
   function onSubmit(data) {
     const { fullName, email, password } = data;

@@ -24,7 +24,7 @@ function UpdateUserDataForm() {
   const [fullName, setFullName] = useState(currentFullName);
   const [avatar, setAvatar] = useState(null);
 
-  const disabled = !isAdmin || isUpdating;
+  const disabled = isUpdating;
 
   function handleSubmit(e) {
     e.preventDefault();

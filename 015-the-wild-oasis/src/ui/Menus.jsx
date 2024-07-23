@@ -120,7 +120,8 @@ function List({ id, children }) {
 
 function Button({ children, icon, onClick }) {
   const { close } = useContext(MenusContext);
-  const { isAdmin } = useUser();
+  // const { isAdmin } = useUser();
+  const disabled = false;
 
   function handleClick() {
     onClick?.();
@@ -130,7 +131,7 @@ function Button({ children, icon, onClick }) {
   return (
     <ul>
       <li>
-        <StyledButton disabled={!isAdmin} onClick={handleClick}>
+        <StyledButton disabled={disabled} onClick={handleClick}>
           {icon} <span>{children}</span>
         </StyledButton>
       </li>
