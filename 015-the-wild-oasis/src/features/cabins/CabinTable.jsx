@@ -6,9 +6,10 @@ import { useCabins } from './useCabins';
 import Table from '../../ui/Table';
 import Menus from '../../ui/Menus';
 import Empty from '../../ui/Empty';
+import Pagination from '../../ui/Pagination';
 
 export default function CabinTable() {
-  const { isLoading, error, cabins } = useCabins();
+  const { isLoading, error, cabins, count } = useCabins();
   const [seacrchParams, setSearchParams] = useSearchParams();
 
   if (cabins?.length === 0) return <Empty resourceName='cabins' />;
@@ -47,6 +48,8 @@ export default function CabinTable() {
           render={cabin => <CabinRow cabin={cabin} key={cabin.id} />}
         />
       </Table>
+
+      {count && <Pagination count={count} />}
     </Menus>
   );
 }

@@ -3,12 +3,14 @@ import CreateCabinForm from './CreateCabinForm';
 import Modal from '../../ui/Modal';
 import CabinTable from './CabinTable';
 import { useUser } from '../authentication/useUser';
+import { useCabins } from './useCabins';
 
 export default function AddCabin() {
   const { isAdmin } = useUser();
+  const { isLoading } = useCabins();
 
   const disabled = false;
-
+  if (isLoading) return;
   return (
     <div>
       <Modal>
