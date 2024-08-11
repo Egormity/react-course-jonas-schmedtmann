@@ -1,14 +1,14 @@
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/FakeAuthContext';
-import styles from './User.module.css';
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/FakeAuthContext";
+import styles from "./User.module.css";
 
-export default function User() {
+function User() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
   function handleClick() {
     logout();
-    navigate('/');
+    navigate("/");
   }
 
   return (
@@ -19,6 +19,8 @@ export default function User() {
     </div>
   );
 }
+
+export default User;
 
 /*
 CHALLENGE

@@ -2,18 +2,11 @@
   width: 100%;
   height: 65vh;
   list-style: none;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: start;
   gap: 1.6rem;
-}
-
-.countryList {
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
-}
-.countryList::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
 }
