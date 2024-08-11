@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body
-        className={`${josefin.className} bg-primary-950 text-primary-100 relative flex min-h-screen flex-col antialiased`}
+        className={`${josefin.className} vsc-initialized relative flex min-h-screen flex-col bg-primary-950 text-primary-100 antialiased`}
       >
         <Header />
 
