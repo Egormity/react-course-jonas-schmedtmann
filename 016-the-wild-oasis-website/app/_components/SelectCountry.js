@@ -1,10 +1,12 @@
+'use server';
+
 import { getCountries } from '@/app/_lib/data-service';
 
 // Let's imagine your colleague already built this component 😃
 
 export default async function SelectCountry({ defaultCountry, name, id, className }) {
   const countries = await getCountries();
-  const flag = countries.find(country => country.name === defaultCountry)?.flag ?? '';
+  const flag = countries.find(country => country.name === defaultCountry)?.flag || '';
 
   return (
     <select
