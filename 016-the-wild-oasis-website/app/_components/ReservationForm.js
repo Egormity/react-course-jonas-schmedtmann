@@ -1,5 +1,10 @@
-export default function ReservationForm({ cabin }) {
-  // CHANGE
+'use client';
+
+import { useReservationContext } from '../_contexts/ReservationContext';
+
+export default function ReservationForm({ cabin, user }) {
+  const { range } = useReservationContext();
+
   const { maxCapacity } = cabin;
 
   return (
@@ -7,7 +12,7 @@ export default function ReservationForm({ cabin }) {
       <div className='flex items-center justify-between bg-primary-800 px-16 py-2 text-primary-300'>
         <p>Logged in as</p>
 
-        {/* <div className='flex gap-4 items-center'>
+        <div className='flex items-center gap-4'>
           <img
             // Important to display google profile images
             referrerPolicy='no-referrer'
@@ -16,7 +21,7 @@ export default function ReservationForm({ cabin }) {
             alt={user.name}
           />
           <p>{user.name}</p>
-        </div> */}
+        </div>
       </div>
 
       <form className='flex flex-col gap-5 bg-primary-900 px-16 py-10 text-lg'>
