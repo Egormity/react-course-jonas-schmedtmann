@@ -11,7 +11,7 @@ export default function page() {
         className='object-cover'
         placeholder='blur'
         quality={100}
-        alt='Mountains and forests with two cabins'
+        alt='Mountains and forests with two cabins '
       />
 
       <div className='relative z-10 mx-auto my-auto -translate-y-12 text-center'>
