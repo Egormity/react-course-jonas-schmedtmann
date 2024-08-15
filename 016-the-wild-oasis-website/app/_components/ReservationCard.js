@@ -9,7 +9,7 @@ export const formatDistanceFromNow = dateStr =>
     addSuffix: true,
   }).replace('about ', '');
 
-function ReservationCard({ booking }) {
+function ReservationCard({ booking, onDelete }) {
   const {
     id,
     guestId,
@@ -64,7 +64,7 @@ function ReservationCard({ booking }) {
       </div>
 
       {!isPast(startDate) ? (
-        <div className='flex w-[100px] flex-col border-l border-primary-800'>
+        <div className='flex w-[6.25rem] flex-col border-l border-primary-800'>
           <Link
             href={`/account/reservations/edit/${id}`}
             disabled
@@ -74,10 +74,10 @@ function ReservationCard({ booking }) {
             <span className='mt-1'>Edit</span>
           </Link>
 
-          <DeleteReservation bookingId={id} />
+          <DeleteReservation bookingId={id} onDelete={onDelete} />
         </div>
       ) : (
-        <div className='flex w-[100px] flex-col items-center justify-center border-l border-primary-800 text-primary-300'>
+        <div className='flex w-[6.25rem] flex-col items-center justify-center border-l border-primary-800 text-primary-300'>
           <p>Not</p>
           <p>Editable</p>
         </div>
